@@ -1,0 +1,25 @@
+{
+  "name": "cookie-grabber-website",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "aflextr",
+  "license": "ISC",
+  "description": "An API server that allows you to pull a cookie from a site",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "axios-cache-interceptor": "^1.6.2",
+    "axios-cookiejar-support": "^5.0.5",
+    "axios-retry": "^4.5.0",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "node-cache": "^5.1.2",
+    "tough-cookie": "^5.1.0"
+  }
+}
