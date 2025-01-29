@@ -28,6 +28,7 @@ async function fetchWithCookies(url) {
     
     var cookies = cookieJar.getCookiesSync(url);
     cookies = cookies.map(cookie => cookie.cookieString()).join('; ');
+    await cookieJar.removeAllCookiesSync();
     return cookies
   } catch (error) {
     console.error('Error fetching the URL:', error);
