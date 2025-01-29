@@ -24,8 +24,8 @@ async function PostIndex(req, res) {
                 var data = await scrapeCookie.fetchWithCookies(url);
                 if (data.length > 0) {
                     nodeCache.set(url, data);
+                    return res.json({ url: url, data: data, status: true, statusCode: 200 });
                 }
-                return res.json({ url: url, data: data, status: true, statusCode: 200 });
             }
         }else{
             return res.json({ url: url, data: "The token is incorrect or not validated. Try again", status: false, statusCode: 400 });
