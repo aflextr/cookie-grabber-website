@@ -16,5 +16,8 @@ app.post("/api/v1/getcookie", async (req, res) => {v1ApiPage.PostIndex(req,res)}
 
 
 app.listen(process.env.PORT || 7000, function (error) {
-    console.log(error);
+    if (error) {
+        console.error("Error in starting server",error.message);   
+    }
+    console.log("Server is running on port:", process.env.PORT || 7000);
 });

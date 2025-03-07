@@ -1,7 +1,7 @@
 const cache = require("node-cache");
 const scrapeCookie = require("../../../scrapeCookie");
 
-var nodeCache = new cache({ stdTTL: 120, checkperiod: 120 });
+var nodeCache = new cache({ stdTTL: 1800, checkperiod: 300 });
 
 
 async function PostIndex(req, res) {
@@ -32,6 +32,12 @@ async function PostIndex(req, res) {
         }
     } catch (error) {
         console.log(error);
+        return res.status(500).json({ 
+            url: url, 
+            data: "server error. Please try again later", 
+            status: false, 
+            statusCode: 500 
+        });
     }
 }
 
