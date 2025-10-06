@@ -26,7 +26,7 @@ async function fetchWithCookies(url) {
 
     await client.get(url,{headers:header});
     
-    var cookies = cookieJar.getCookiesSync(url);
+    var cookies = await cookieJar.getCookiesSync(url);
     cookies = cookies.map(cookie => cookie.cookieString()).join('; ');
     await cookieJar.removeAllCookiesSync();
     return cookies
