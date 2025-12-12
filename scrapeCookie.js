@@ -1,14 +1,12 @@
 const Axios = require('axios');
 const tough = require('tough-cookie');
 const { wrapper } = require('axios-cookiejar-support');
-const axiosRetry = require("axios-retry").default;
 const { setupCache } = require("axios-cache-interceptor");
 
 
 
 const instance = Axios.create();
 const axios = setupCache(instance);
-axiosRetry(axios, { retries: 3 });
 
 
 const cookieJar = new tough.CookieJar();
