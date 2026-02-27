@@ -32,4 +32,4 @@ jobs:
           tags: ghcr.io/aflextr/cookie-grabber-website-image:latest 
 
       - name: 4. Portainer'ı Tetikle 
-        run: curl -X POST ${{ secrets.PORTAINER_WEBHOOK }}
+        run: curl -k -X POST ${{ secrets.PORTAINER_WEBHOOK }}
